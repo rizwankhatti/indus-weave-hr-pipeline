@@ -1,3 +1,6 @@
+USE IndusWeave;
+GO
+
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'warehouse')
 BEGIN
     EXEC('CREATE SCHEMA warehouse');

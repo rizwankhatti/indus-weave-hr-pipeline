@@ -1,3 +1,6 @@
+USE IndusWeave;
+GO
+
 INSERT INTO warehouse.dim_date (date_key, year, quarter, month, month_name, day_of_week, day_name, is_weekend)
 SELECT 
     d, YEAR(d), DATEPART(QUARTER, d), MONTH(d), DATENAME(MONTH, d),
