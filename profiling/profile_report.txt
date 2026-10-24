@@ -1,0 +1,341 @@
+
+======================================================================
+FILE: applications.csv | shape: (3835, 6)
+COLUMNS: ['application_id', 'candidate_id', 'job_req_id', 'dept_id', 'stage', 'stage_date']
+
+HEAD(3):
+   application_id candidate_id job_req_id dept_id        stage  stage_date
+0        AP00001       C00001      JR022     D05      Applied  2026-05-24
+1        AP00001       C00001      JR022     D05     Screened  2026-05-30
+2        AP00001       C00001      JR022     D05  Interviewed  2026-06-13
+
+NULLS:
+ application_id    0
+candidate_id      0
+job_req_id        0
+dept_id           0
+stage             0
+stage_date        0
+
+UNIQUE COUNT:
+ application_id    1400
+candidate_id      1400
+job_req_id          30
+dept_id             14
+stage                7
+stage_date         196
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: biometric_punches.csv | shape: (345280, 4)
+COLUMNS: ['punch_id', 'device_id', 'device_user_id', 'punch_time']
+
+HEAD(3):
+     punch_id    device_id device_user_id           punch_time
+0  P00000001   DEV-KOR-01          84982  2026-04-01 05:35:12
+1  P00000002  DEV-SITE-01          28825  2026-04-01 05:35:14
+2  P00000003   DEV-KOR-01          78716  2026-04-01 05:35:30
+
+NULLS:
+ punch_id          0
+device_id         0
+device_user_id    0
+punch_time        0
+
+UNIQUE COUNT:
+ punch_id          345280
+device_id              4
+device_user_id      1299
+punch_time        322346
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: departments.csv | shape: (25, 6)
+COLUMNS: ['dept_id', 'dept_name', 'plant', 'cost_center', 'previous_name', 'renamed_on']
+
+HEAD(3):
+   dept_id        dept_name        plant cost_center previous_name renamed_on
+0     D01  Human Resources  Head Office    CC-HO-01           NaN        NaN
+1     D02          Finance  Head Office    CC-HO-02           NaN        NaN
+2     D03               IT  Head Office    CC-HO-03           NaN        NaN
+
+NULLS:
+ dept_id           0
+dept_name         0
+plant             0
+cost_center       0
+previous_name    23
+renamed_on       23
+
+UNIQUE COUNT:
+ dept_id          25
+dept_name        19
+plant             4
+cost_center      25
+previous_name     2
+renamed_on        2
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: device_mapping.csv | shape: (1260, 4)
+COLUMNS: ['device_id', 'device_user_id', 'emp_id', 'enrolled_on']
+
+HEAD(3):
+      device_id device_user_id  emp_id enrolled_on
+0  DEV-SITE-01          16779  E10250  2024-01-01
+1   DEV-FSD-01          10465  E10591  2024-01-01
+2   DEV-KOR-01          36101  E10916  2024-01-01
+
+NULLS:
+ device_id         0
+device_user_id    0
+emp_id            0
+enrolled_on       0
+
+UNIQUE COUNT:
+ device_id            4
+device_user_id    1260
+emp_id            1260
+enrolled_on        199
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: employees.csv | shape: (1316, 16)
+COLUMNS: ['emp_id', 'full_name', 'gender', 'date_of_birth', 'email', 'phone', 'plant', 'department', 'designation', 'grade', 'employment_type', 'hire_date', 'separation_date', 'status', 'annual_leave_entitlement', 'updated_at']
+
+HEAD(3):
+    emp_id    full_name gender date_of_birth                             email         phone          plant   department designation grade employment_type    hire_date separation_date  status annual_leave_entitlement           updated_at
+0  E10700   Sidra Butt      F    16/08/1987   sidra.butt815@induswave.example  0305-7303046  Korangi Plant  Maintenance    Operator    G1       Permanent  17-Nov-2022             NaN  Active                       14  2026-07-01 13:22:00
+1  E10933  Owais Mirza      M    2007-07-27  owais.mirza894@induswave.example  0326-2458452     SITE Plant     dyeing    Technician    G3       Permanent   2016-06-18             NaN  Active                       14  2026-07-01 17:53:00
+2  E11260  Maryam Butt      F    2005-10-24  maryam.butt137@induswave.example  0310-8221682  Korangi Plant     Spinning    Operator    G1       Permanent   2013-08-27             NaN  Active                       14  2026-07-01 14:59:00
+
+NULLS:
+ emp_id                         0
+full_name                      0
+gender                         0
+date_of_birth                  0
+email                          0
+phone                          0
+plant                          0
+department                     0
+designation                    0
+grade                          0
+employment_type                0
+hire_date                      0
+separation_date             1226
+status                         0
+annual_leave_entitlement       0
+updated_at                     0
+
+UNIQUE COUNT:
+ emp_id                      1266
+full_name                    831
+gender                         2
+date_of_birth               1232
+email                       1266
+phone                       1279
+plant                          4
+department                    81
+designation                   11
+grade                          8
+employment_type                2
+hire_date                   1203
+separation_date               84
+status                         2
+annual_leave_entitlement       2
+updated_at                   702
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: employment_history.csv | shape: (3686, 8)
+COLUMNS: ['emp_id', 'effective_from', 'effective_to', 'dept_id', 'designation', 'grade', 'basic_salary', 'change_reason']
+
+HEAD(3):
+    emp_id effective_from effective_to dept_id designation grade basic_salary    change_reason
+0  E10190     2018-04-29   2025-06-30     D15    Operator    G1        26500             Hire
+1  E10574     2026-07-01          NaN     D15    Operator    G1        47500  Salary Revision
+2  E10154     2026-07-01          NaN     D08    Operator    G1        50000  Salary Revision
+
+NULLS:
+ emp_id               0
+effective_from       0
+effective_to      1266
+dept_id              0
+designation          0
+grade                0
+basic_salary         0
+change_reason        0
+
+UNIQUE COUNT:
+ emp_id            1266
+effective_from    1160
+effective_to        84
+dept_id             25
+designation         11
+grade                8
+basic_salary       289
+change_reason        4
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: holidays.csv | shape: (12, 3)
+COLUMNS: ['holiday_date', 'holiday_name', 'scope']
+
+HEAD(3):
+   holiday_date   holiday_name scope
+0   2026-04-25  Local holiday   FSD
+1   2026-05-01     Labour Day   ALL
+2   2026-05-27    Eid ul Adha   ALL
+
+NULLS:
+ holiday_date    0
+holiday_name    0
+scope           0
+
+UNIQUE COUNT:
+ holiday_date    12
+holiday_name    10
+scope            4
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: overtime_requests.csv | shape: (22098, 8)
+COLUMNS: ['request_id', 'emp_id', 'ot_date', 'requested_hours', 'approved_hours', 'status', 'approver_id', 'requested_at']
+
+HEAD(3):
+   request_id  emp_id     ot_date requested_hours approved_hours    status approver_id         requested_at
+0   OT000001  E10001  2026-04-03             2.0            2.0  Approved      E11046  2026-04-04T14:07:00
+1   OT000002  E10001  2026-04-14             3.0            3.0  Approved      E10827  2026-04-14T11:02:00
+2   OT000003  E10001  2026-04-25             1.5            1.5  Approved      E10827  2026-04-26T13:04:00
+
+NULLS:
+ request_id            0
+emp_id                0
+ot_date               0
+requested_hours       0
+approved_hours     2432
+status                0
+approver_id        1086
+requested_at          0
+
+UNIQUE COUNT:
+ request_id         22098
+emp_id              1251
+ot_date              183
+requested_hours       18
+approved_hours        18
+status                 3
+approver_id           47
+requested_at       19944
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: payroll_lines.csv | shape: (53617, 7)
+COLUMNS: ['line_id', 'payroll_month', 'emp_id', 'component', 'component_type', 'units', 'amount']
+
+HEAD(3):
+      line_id payroll_month  emp_id   component component_type units amount
+0  PL0000001       2026-04  E10001       BASIC        EARNING   NaN  39000
+1  PL0000002       2026-04  E10001  HOUSE_RENT        EARNING   NaN  17550
+2  PL0000003       2026-04  E10001     MEDICAL        EARNING   NaN   3900
+
+NULLS:
+ line_id               0
+payroll_month         0
+emp_id                0
+component             0
+component_type        0
+units             43817
+amount                0
+
+UNIQUE COUNT:
+ line_id           53617
+payroll_month         6
+emp_id             1266
+component             9
+component_type        2
+units                66
+amount             3980
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: shift_roster.csv | shape: (36402, 3)
+COLUMNS: ['emp_id', 'week_start', 'shift_code']
+
+HEAD(3):
+    emp_id  week_start shift_code
+0  E10796  2026-09-28      NIGHT
+1  E11106  2026-04-20      NIGHT
+2  E11119  2026-10-12      NIGHT
+
+NULLS:
+ emp_id        0
+week_start    0
+shift_code    0
+
+UNIQUE COUNT:
+ emp_id        1266
+week_start      31
+shift_code       4
+
+FULL DUPLICATE ROWS: 0
+
+======================================================================
+FILE: leave_requests.json | type: list
+ITEMS: 5372
+FIRST ITEM:
+ {
+  "request_id": "LR000001",
+  "employee": {
+    "emp_id": "E10001",
+    "plant": "Korangi Plant"
+  },
+  "leave": {
+    "type": "Casual",
+    "from": "2026-04-08",
+    "to": "2026-04-08",
+    "days_requested": 1
+  },
+  "submitted_at": "2026-04-04T10:10:00",
+  "approvals": [
+    {
+      "step": 1,
+      "approver_role": "Manager",
+      "approver_id": "E10827",
+      "action": "Approved",
+      "acted_at": "2026-04-05T02:10:00"
+    },
+    {
+      "step": 2,
+      "approver_role": "HR",
+      "approver_id": "HR-DESK",
+      "action": "Approved",
+      "acted_at": "2026-04-05T07:10:00"
+    }
+  ],
+  "cancelled_at": "2026-04-05T21:10:00"
+}
+
+======================================================================
+FILE: shifts.json | type: dict
+TOP KEYS: ['shifts']
+ITEMS: 4
+FIRST ITEM:
+ {
+  "shift_code": "DAY",
+  "name": "Day",
+  "start_time": "06:00",
+  "end_time": "14:00",
+  "crosses_midnight": false,
+  "grace_minutes": 10,
+  "applies_to": "Plant shift workers"
+}
