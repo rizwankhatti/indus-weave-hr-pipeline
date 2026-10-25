@@ -20,3 +20,6 @@ CREATE TABLE quality.dq_results (
     executed_at DATETIME2 DEFAULT SYSDATETIME()
 );
 GO
+
+
+`
